@@ -1,0 +1,6 @@
+dist/
+.toolchain/
+.template/
+__pycache__/
+*.pyc
+node_modules/

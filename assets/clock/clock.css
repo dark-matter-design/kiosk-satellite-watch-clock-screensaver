@@ -1,0 +1,5 @@
+:root { --background:#3F925D; --numeral:#000000; --hand:#FFFFFF; --second:#D6E9CD; --pivot:#FFFFFF; --date:#000000; }
+html, body { margin:0; width:100%; height:100%; overflow:hidden; background:var(--background); }
+body { user-select:none; -webkit-user-select:none; }
+#clock { position:absolute; display:block; overflow:hidden; }
+#hour, #minute, #second { transform-origin:0 0; will-change:transform; }

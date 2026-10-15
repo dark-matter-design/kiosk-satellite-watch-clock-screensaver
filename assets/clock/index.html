@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'">
+  <title>Watch Clock</title>
+  <link rel="stylesheet" href="clock.css">
+  <script src="clock-core.js" defer></script>
+  <script src="clock.js" defer></script>
+</head>
+<body>
+  <svg id="clock" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Analogue clock">
+    <!-- Original geometric outlines, drawn for this project. No font dependency. -->
+    <g id="numerals" fill="none" stroke="var(--numeral)" stroke-width="6.4" stroke-linejoin="round">
+      <g id="twelve">
+        <path d="M54 26 L77 10 L77 91"/>
+        <path d="M90 29 C91 3 129 1 134 23 C141 45 111 62 91 89 L137 89"/>
+      </g>
+      <g id="nine">
+        <path d="M12 150 C16 157 23 162 33 162 C52 162 63 133 61 105 C61 90 52 81 36 81 C18 81 9 94 11 111 C13 130 39 135 53 121 C58 116 61 110 61 105"/>
+      </g>
+      <g id="three">
+        <path d="M147 91 C158 78 181 80 187 94 C194 111 181 120 162 121 C184 120 194 132 187 149 C180 167 156 165 145 151"/>
+      </g>
+      <g id="six">
+        <path d="M123 141 C115 125 93 126 82 140 C74 152 72 170 76 186 C81 209 111 211 123 192 C135 169 112 151 92 161 C81 166 74 174 75 182"/>
+      </g>
+    </g>
+    <text id="date" fill="var(--date)" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="600" letter-spacing=".15"/>
+    <g id="hands" fill="none" stroke-linecap="round">
+      <g id="hour"><path d="M0 9 L0 -48" stroke="var(--hand)" stroke-width="6.2"/></g>
+      <g id="minute"><path d="M0 10 L0 -82" stroke="var(--hand)" stroke-width="6.2"/></g>
+      <circle r="4" fill="var(--background)" stroke="var(--pivot)" stroke-width="1.2"/>
+      <g id="second"><path d="M0 13 L0 -91" stroke="var(--second)" stroke-width=".85"/></g>
+      <circle r="1.8" fill="var(--pivot)"/>
+    </g>
+  </svg>
+</body>
+</html>

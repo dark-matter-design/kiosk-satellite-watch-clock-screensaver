@@ -1,0 +1,204 @@
+{
+  "schemaVersion": 1,
+  "id": "watch-clock",
+  "name": "Watch Clock",
+  "version": "1.0.1",
+  "apiVersion": 1,
+  "minAndroidSdk": 24,
+  "entryClass": "me.jxl.kiosk.plugins.watchclock.WatchClockPlugin",
+  "description": "A fluid vector clock with oversized numerals, local time and native colour settings.",
+  "author": "Watch Clock contributors",
+  "license": "Apache-2.0",
+  "capabilities": [
+    "screensaver"
+  ],
+  "settings": [
+    {
+      "key": "theme",
+      "type": "select",
+      "title": "Colour scheme",
+      "default": "Original Green",
+      "group": "Colours",
+      "options": [
+        "Original Green",
+        "Midnight Black",
+        "Deep Blue",
+        "Navy",
+        "Red",
+        "Orange",
+        "Purple",
+        "Pink",
+        "Cream",
+        "White",
+        "Custom"
+      ]
+    },
+    {
+      "key": "backgroundColor",
+      "type": "color",
+      "title": "Background colour",
+      "default": "#3F925D",
+      "group": "Colours",
+      "visibleWhen": {
+        "key": "theme",
+        "equals": "Custom"
+      }
+    },
+    {
+      "key": "numeralColor",
+      "type": "color",
+      "title": "Numeral colour",
+      "default": "#000000",
+      "group": "Colours",
+      "visibleWhen": {
+        "key": "theme",
+        "equals": "Custom"
+      }
+    },
+    {
+      "key": "handColor",
+      "type": "color",
+      "title": "Hour and minute hands",
+      "default": "#FFFFFF",
+      "group": "Colours",
+      "visibleWhen": {
+        "key": "theme",
+        "equals": "Custom"
+      }
+    },
+    {
+      "key": "secondColor",
+      "type": "color",
+      "title": "Seconds hand",
+      "default": "#D6E9CD",
+      "group": "Colours",
+      "visibleWhen": {
+        "key": "theme",
+        "equals": "Custom"
+      }
+    },
+    {
+      "key": "pivotColor",
+      "type": "color",
+      "title": "Centre pivot",
+      "default": "#FFFFFF",
+      "group": "Colours",
+      "visibleWhen": {
+        "key": "theme",
+        "equals": "Custom"
+      }
+    },
+    {
+      "key": "dateColor",
+      "type": "color",
+      "title": "Date text",
+      "default": "#000000",
+      "group": "Colours",
+      "visibleWhen": {
+        "key": "theme",
+        "equals": "Custom"
+      }
+    },
+    {
+      "key": "layout",
+      "type": "select",
+      "title": "Layout mode",
+      "default": "Original proportions",
+      "group": "Display",
+      "options": [
+        "Original proportions",
+        "Adaptive"
+      ]
+    },
+    {
+      "key": "scale",
+      "type": "number",
+      "title": "Clock scale",
+      "default": 100,
+      "group": "Display",
+      "min": 50,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "description": "100% is the largest safe fit; lower values add breathing room."
+    },
+    {
+      "key": "alignment",
+      "type": "select",
+      "title": "Clock alignment",
+      "default": "Centre",
+      "group": "Display",
+      "options": [
+        "Centre",
+        "Left",
+        "Right",
+        "Top",
+        "Bottom"
+      ]
+    },
+    {
+      "key": "pixelShift",
+      "type": "boolean",
+      "title": "Clock pixel shift",
+      "default": true,
+      "group": "Display",
+      "description": "Move numerals, hands and date every minute; keep the background fixed. Turn OFF Kiosk Satellite Screensaver > Pixel shift to prevent black edges from host-level movement."
+    },
+    {
+      "key": "showSeconds",
+      "type": "boolean",
+      "title": "Display seconds hand",
+      "default": true,
+      "group": "Display"
+    },
+    {
+      "key": "showDate",
+      "type": "boolean",
+      "title": "Show date",
+      "default": true,
+      "group": "Date and time"
+    },
+    {
+      "key": "datePosition",
+      "type": "select",
+      "title": "Date position",
+      "default": "Bottom left",
+      "group": "Date and time",
+      "options": [
+        "Bottom left",
+        "Bottom right",
+        "Top left",
+        "Top right"
+      ],
+      "visibleWhen": {
+        "key": "showDate",
+        "equals": true
+      }
+    },
+    {
+      "key": "dateFormat",
+      "type": "select",
+      "title": "Date format",
+      "default": "Short weekday + day",
+      "group": "Date and time",
+      "options": [
+        "Short weekday + day",
+        "Day + short month",
+        "Numeric date"
+      ],
+      "visibleWhen": {
+        "key": "showDate",
+        "equals": true
+      }
+    },
+    {
+      "key": "timeZone",
+      "type": "string",
+      "title": "Time zone",
+      "default": "Local",
+      "group": "Date and time",
+      "description": "Local uses the device time zone. Or enter an IANA zone, e.g. Australia/Sydney. Invalid zones fall back to local."
+    }
+  ],
+  "commands": []
+}
