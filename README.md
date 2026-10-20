@@ -11,13 +11,13 @@ A colourful analogue clock screensaver for [Kiosk Satellite](https://github.com/
 
 ## Installation
 
-### Install button
+### Community Plugins (recommended)
 
 Open the plugin in Kiosk Satellite, review it and choose **Trust and install**.
 
 [![Install in Kiosk Satellite](https://kiosksatellite.com/img/badges/plugin-add.svg)](https://kiosksatellite.com/redirect/plugin/?repository=dark-matter-design/kiosk-satellite-watch-clock-screensaver)
 
-The button uses the [Community Plugins](https://kiosksatellite.com/plugins/) installer. If the plugin is not available there yet, use the manual steps below. Once listed, you can also search for **Watch Clock** under **Settings > Plugin Manager > Browse plugins**.
+This plugin is listed in [Community Plugins](https://kiosksatellite.com/plugins/). You can also search for **Watch Clock** under **Settings > Plugin Manager > Browse plugins**.
 
 ### Manual installation
 

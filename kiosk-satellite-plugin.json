@@ -2,12 +2,12 @@
   "schemaVersion": 1,
   "id": "watch-clock",
   "name": "Watch Clock",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "apiVersion": 1,
   "minAndroidSdk": 24,
   "entryClass": "me.jxl.kiosk.plugins.watchclock.WatchClockPlugin",
-  "description": "A fluid vector clock with oversized numerals, local time and native colour settings.",
-  "author": "Watch Clock contributors",
+  "description": "A fluid vector clock screensaver with oversized numerals, local time and native colour settings.",
+  "author": "dark-matter-design",
   "license": "Apache-2.0",
   "capabilities": [
     "screensaver"

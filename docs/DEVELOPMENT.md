@@ -22,7 +22,7 @@ python tools/test.py
 python tools/build.py
 ```
 
-The builder produces `dist/watch-clock-1.0.1.zip`, its `.zip.sha256`, a matching standalone manifest and a compile-time SDK JAR. Only plugin DEX classes, the manifest, license, directory icon and four clock assets go into the installable ZIP; the SDK JAR is not bundled.
+The builder produces `dist/watch-clock-1.0.2.zip`, its `.zip.sha256`, a matching standalone manifest and a compile-time SDK JAR. Only plugin DEX classes, the manifest, license, directory icon and four clock assets go into the installable ZIP; the SDK JAR is not bundled.
 
 Optional browser validation uses Playwright and a Chromium browser:
 
@@ -46,7 +46,7 @@ The four numerals are original geometric SVG paths. No proprietary Apple typefac
 
 ## Publish
 
-Push this repository to your own public GitHub repository, commit the source and tag a version such as `v1.0.1`, then publish a stable GitHub release. `.github/workflows/build.yml` tests and builds the tagged source on GitHub and uploads the ZIP, checksum and matching manifest using `github.token`.
+Push this repository to your own public GitHub repository, commit the source and tag a version such as `v1.0.2`, then publish a stable GitHub release. `.github/workflows/build.yml` tests and builds the tagged source on GitHub and uploads the ZIP, checksum and matching manifest using `github.token`.
 
 Use all three assets from the same workflow run. KS requires the uploader to be `github-actions[bot]`; manually uploaded release assets or uploads using a personal access token are rejected. Drafts and prereleases are not available through normal installation. The workflow can be retried manually against an existing release tag. See the official [release requirements](https://github.com/jxlarrea/kiosk-satellite-plugin-hello-world/blob/main/docs/creating-plugins.md#repository-and-release).
 
