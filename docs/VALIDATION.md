@@ -11,9 +11,13 @@ Development platform: Windows, OpenJDK 21, Android platform 35 and build-tools 3
 - Virtual-time browser checks cross midnight and jump ahead five minutes, then change wall time to represent a suspended document resuming. This checks correctness; it does not benchmark real five-minute frame pacing.
 - Previews in `docs/previews/` and `comparison.html` support side-by-side visual comparison with the user-supplied reference. `reference.png` is the unchanged user attachment, included only for documentation and excluded from the plugin ZIP. No physical watch bezel is drawn. Numeral outlines are an approximation made specifically for the project.
 
-## Device acceptance checklist — not yet run
+## Device acceptance — confirmed
 
-There is no connected Android kiosk in this workspace. Before deploying broadly, install the development ZIP and verify:
+On 20 October 2026, the maintainer confirmed that device acceptance testing was completed and the plugin was working. This records the maintainer's device verification; the desktop automated suite remains separate.
+
+### Regression checklist
+
+For future releases, repeat the following device checks:
 
 - Select Watch Clock in normal mode and a schedule, with and without Now Playing and stock widgets.
 - Observe the seconds hand for several real minutes, including the 12 o'clock wrap; confirm fluid movement on the target display.

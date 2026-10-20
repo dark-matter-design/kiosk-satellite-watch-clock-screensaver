@@ -200,5 +200,6 @@
       "description": "Local uses the device time zone. Or enter an IANA zone, e.g. Australia/Sydney. Invalid zones fall back to local."
     }
   ],
-  "commands": []
+  "commands": [],
+  "icon": "icon.png"
 }

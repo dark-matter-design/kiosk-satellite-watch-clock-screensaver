@@ -4,10 +4,14 @@ A standalone SDK 1 screensaver plugin inspired by the supplied green watch face.
 
 ![Original green face](docs/previews/square.png)
 
+## Install from GitHub
+
+Enable plugins in **Settings > Plugin Manager**, choose **Add plugin**, paste `https://github.com/dark-matter-design/kiosk-satellite-watch-clock-screensaver`, review the release and choose **Trust and install**.
+
 ## Install locally
 
 1. Enable plugins in **Settings > Plugin Manager** in Kiosk Satellite.
-2. Open **Developer Tools > Install from ZIP** on the kiosk or Remote Admin and select `dist/watch-clock-1.0.0.zip`.
+2. Open **Developer Tools > Install from ZIP** on the kiosk or Remote Admin and select `dist/watch-clock-1.0.1.zip`.
 3. Review and trust the code, then enable **Watch Clock**.
 4. Choose **Screensaver > Screensaver mode > Watch Clock (Watch Clock)**. The same entry is available in screensaver schedules.
 
@@ -24,6 +28,7 @@ Open **Plugin Manager > Watch Clock**. Settings apply to an active clock through
 | Layout | Original proportions (default), Adaptive |
 | Scale | 100%; adjustable 50–100% to keep the complete clock visible |
 | Alignment | Centre (default), Left, Right, Top, Bottom |
+| Clock pixel shift | Enabled; moves clock content once per minute while keeping the background fixed. Turn off host-wide Screensaver > Pixel shift |
 | Seconds hand | Enabled |
 | Date | Enabled; Bottom left (default), Bottom right, Top left, Top right |
 | Date format | Short weekday + day (default), Day + short month, Numeric date |
@@ -53,7 +58,7 @@ python tools/test.py
 python tools/build.py
 ```
 
-The builder produces `dist/watch-clock-1.0.0.zip`, its `.zip.sha256`, a matching standalone manifest and a compile-time SDK JAR. Only plugin DEX classes, the manifest, license and four clock assets go into the installable ZIP; the SDK JAR is not bundled.
+The builder produces `dist/watch-clock-1.0.1.zip`, its `.zip.sha256`, a matching standalone manifest and a compile-time SDK JAR. Only plugin DEX classes, the manifest, license, directory icon and four clock assets go into the installable ZIP; the SDK JAR is not bundled.
 
 Optional browser validation uses Playwright and a Chromium browser:
 
@@ -71,15 +76,15 @@ Set `BROWSER_CHANNEL=chromium` for bundled Chromium, `chrome` for installed Chro
 
 `clock-core.js` contains palettes, angles and safe responsive geometry. `clock.js` uses a single `requestAnimationFrame` loop and SVG transforms. Time is interpolated with `performance.now()` between system-clock anchors, synchronized each second and immediately after a clock correction. Every hand includes fractional seconds. Hidden/page-hidden documents cancel their callback; resumption reads current time. No frame deltas are accumulated. Date text changes only when needed. All assets are local, with a restrictive content security policy.
 
-KS owns activation, schedules, brightness, dismissal, screen-off, widgets, pixel shift and Now Playing. Settings changes recreate the renderer as required by the SDK; they do not restart KS. The plugin does not implement any of those host policies.
+KS owns activation, schedules, brightness, dismissal, screen-off, widgets, host-wide pixel shift and Now Playing. The plugin's Clock pixel shift moves only the clock content, keeping the background fixed; leave host-wide Screensaver > Pixel shift off to avoid moving the whole surface. Settings changes recreate the renderer as required by the SDK; they do not restart KS. The plugin does not implement any of those host policies.
 
 The four numerals are original geometric SVG paths. No proprietary Apple typeface or artwork is included. The shapes closely approximate the reference; they are not pixel-identical to Apple's custom typography. The small date uses the device's local sans-serif font. Frame rate depends on the Android WebView and display; 60 FPS is a target, not a guarantee on all devices.
 
 ## Publish
 
-Push this repository to your own public GitHub repository, commit the source and tag a version such as `v1.0.0`, then publish a stable GitHub release. `.github/workflows/build.yml` tests and builds the tagged source on GitHub and uploads the ZIP, checksum and matching manifest using `github.token`.
+Push this repository to your own public GitHub repository, commit the source and tag a version such as `v1.0.1`, then publish a stable GitHub release. `.github/workflows/build.yml` tests and builds the tagged source on GitHub and uploads the ZIP, checksum and matching manifest using `github.token`.
 
 Use all three assets from the same workflow run. KS requires the uploader to be `github-actions[bot]`; manually uploaded release assets or uploads using a personal access token are rejected. Drafts and prereleases are not available through normal installation. The workflow can be retried manually against an existing release tag. See the official [release requirements](https://github.com/jxlarrea/kiosk-satellite-plugin-hello-world/blob/main/docs/creating-plugins.md#repository-and-release).
 
-See [validation and device checklist](docs/VALIDATION.md) for what has been exercised and what still requires real hardware. Licensed Apache-2.0; an independent community plugin, not affiliated with Apple.
+See [validation and device checklist](docs/VALIDATION.md) for automated coverage and the device acceptance checks confirmed by the maintainer on 20 October 2026. Licensed Apache-2.0; an independent community plugin, not affiliated with Apple.
 
